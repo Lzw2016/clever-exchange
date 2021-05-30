@@ -1,0 +1,486 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<exchange>
+    <!--全局公共资源-->
+    <resources>
+        <logger/>
+        <retry-stage/>
+        <text-content/>
+        <!--...等等-->
+    </resources>
+
+    <!--
+    公共属性
+        id
+        description
+        order
+        size-width
+        size-height
+        position-top
+        position-left
+    时间单位
+        milliseconds
+        seconds
+        minutes
+        hours
+        days
+    -->
+
+    <datasource>
+        <!--定义JDBC数据源-->
+        <jdbc
+            id=""
+            description=""
+            driver=""
+            jdbc-url=""
+            username=""
+            password=""
+            max-active=""
+        >
+            <property name="" value=""/>
+        </jdbc>
+
+        <!--定义Redis数据源-->
+        <redis
+            id=""
+            description=""
+            host=""
+            port=""
+            database=""
+            password=""
+            min-idle=""
+            max-idle=""
+            max-active=""
+        >
+            <property name="" value=""/>
+        </redis>
+
+        <!--定义RabbitMQ数据源-->
+        <rabbitmq
+            id=""
+            description=""
+            host=""
+            port=""
+            vhost=""
+            username=""
+            password=""
+            thread-pool-size=""
+        >
+            <property name="" value=""/>
+        </rabbitmq>
+
+        <!--定义RocketMQ数据源-->
+        <rocketmq
+            id=""
+            description=""
+        >
+            <property name="" value=""/>
+        </rocketmq>
+
+        <!--定义Kafka数据源-->
+        <kafka
+            id=""
+            description=""
+            servers=""
+            retries=""
+            batch-size=""
+            linger-ms=""
+            buffer-memory=""
+            request-timeout=""
+        >
+            <property name="" value=""/>
+        </kafka>
+
+        <!--定义ElasticSearch数据源-->
+        <elasticsearch
+            id=""
+            description=""
+            servers=""
+        >
+            <property name="" value=""/>
+        </elasticsearch>
+
+        <!--定义HTTP服务数据源-->
+        <http-server
+                id=""
+                description=""
+                url=""
+                connect-timeout=""
+                read-timeout=""
+                charset=""
+        >
+            <property name="" value=""/>
+        </http-server>
+
+        <!--文件系统: log | excel | csv-->
+    </datasource>
+
+    <!--定义日志输出-->
+    <logger
+        id=""
+        description=""
+        disable=""
+        logger-name=""
+        level=""
+    />
+
+    <!--定义重试策略-->
+    <retry-stage
+        id=""
+        description=""
+        disable=""
+        type="fixed|linear|custom"
+        interval=""
+        max-count=""
+        custom="1s 2s 5s 30s 2m 5m 30m 2h"
+    />
+
+    <!--定义文本内容-->
+    <text-content
+        id=""
+        description=""
+        type="static|enjoy-template|javascript-function"
+        trim="true|false"
+        compressor="true|false"
+        keep-text-wrap="true|false"
+        text-wrap-char="lf|crlf"
+    >
+        <![CDATA[ static-content/enjoy-template-content/javascript-function ]]>
+    </text-content>
+
+    <!--定义执行脚本函数-->
+    <exec-fuc
+        id=""
+        description=""
+        name=""
+        type="javascript-function"
+    >
+        <![CDATA[ javascript-content ]]>
+    </exec-fuc>
+
+    <!--定义执行SQL逻辑-->
+    <exec-sql
+        id=""
+        description=""
+        jdbc-datasource-id=""
+        transaction=""
+        cursor-mode=""
+        fetch-size=""
+        type="static|enjoy-template|javascript-function"
+        trim="true|false"
+        compressor="true|false"
+        keep-text-wrap="true|false"
+        text-wrap-char="lf|crlf"
+    >
+        <![CDATA[ static-content/enjoy-template-content/javascript-function ]]>
+    </exec-sql>
+
+    <!--定义执行Redis命令-->
+    <exec-redis-cmd
+        id=""
+        description=""
+        redis-datasource-id=""
+    >
+    </exec-redis-cmd>
+
+    <!--定义发送RabbitMQ消息-->
+    <send-rabbitmq-msg
+        id=""
+        description=""
+        rabbitmq-datasource-id=""
+    >
+    </send-rabbitmq-msg>
+
+    <!--定义发送RocketMQ消息-->
+    <send-rocketmq-msg
+        id=""
+        description=""
+        rocketmq-datasource-id=""
+    >
+    </send-rocketmq-msg>
+
+    <!--定义发送Kafka消息-->
+    <send-kafka-msg
+        id=""
+        description=""
+        kafka-datasource-id=""
+    >
+    </send-kafka-msg>
+
+    <!--定义执行ElasticSearch请求-->
+    <exec-elasticsearch-req
+        id=""
+        description=""
+        elasticsearch-datasource-id=""
+    >
+    </exec-elasticsearch-req>
+
+    <!--定义执行HTTP请求-->
+    <exec-http-req
+        id=""
+        description=""
+        url=""
+        http-server-id=""
+        http-server-path=""
+        method=""
+        connect-timeout=""
+        read-timeout=""
+        content-type=""
+    >
+        <headers>
+            <header name="" value=""/>
+        </headers>
+        <cookies>
+            <cookie name="" value=""/>
+        </cookies>
+        <body
+            type="static|enjoy-template|javascript-function"
+            trim="true|false"
+            compressor="true|false"
+            keep-text-wrap="true|false"
+            text-wrap-char="lf|crlf"
+        >
+            <![CDATA[ static-content/enjoy-template-content/javascript-function ]]>
+        </body>
+    </exec-http-req>
+
+    <!--定义写文件-->
+    <write-file
+        id=""
+        description=""
+        file-type="log|excel|csv"
+        file-path=""
+    >
+    </write-file>
+
+    <!--定义读写文件-->
+    <read-file
+        id=""
+        description=""
+        file-type="log|excel|csv"
+        file-path=""
+    >
+    </read-file>
+
+    <!--定义SQL脚本(继承text-content)-->
+    <sql
+        id=""
+        description=""
+        type="static|enjoy-template|javascript-function"
+        trim="true|false"
+        compressor="true|false"
+        keep-text-wrap="true|false"
+        text-wrap-char="lf|crlf"
+    >
+        <![CDATA[ static-content/enjoy-template-content/javascript-function ]]>
+    </sql>
+
+    <!--定义过滤binlog逻辑-->
+    <filter-binlog
+        id=""
+        description=""
+        disable=""
+        filter-binlog-type="insert|update|delete"
+        filter-field=""
+        field=""
+        gt=""
+        gte=""
+        lt=""
+        lte=""
+        eq=""
+        eq-ignore-case=""
+        startswith=""
+        startswith-ignore-case=""
+        endswith=""
+        endswith-ignore-case=""
+        contains=""
+        contains-ignore-case=""
+        isnull=""
+        value-in=""
+        value-not-in=""
+    />
+
+    <!--定义执行脚本函数转换数据(继承exec-fuc)-->
+    <transform-exec-fuc
+        id=""
+        description=""
+        use-by-binlog-type="insert|update|delete"
+    >
+        <!--...省略-->
+    </transform-exec-fuc>
+
+    <!--定义执行SQL转换数据(继承exec-sql)-->
+    <transform-exec-sql
+        id=""
+        description=""
+        use-by-binlog-type="insert|update|delete"
+        max-result-count=""
+    >
+        <![CDATA[ static-content/enjoy-template-content/javascript-function ]]>
+    </transform-exec-sql>
+
+    <!--定义执行HTTP请求转换数据(继承exec-http-req)-->
+    <transform-exec-http-req
+        id=""
+        description=""
+        use-by-binlog-type="insert|update|delete"
+    >
+        <!--...省略-->
+    </transform-exec-http-req>
+
+    <!--定义执行脚本函数装载数据-->
+    <load-exec-fuc
+        id=""
+        description=""
+    >
+        <!--...省略-->
+    </load-exec-fuc>
+
+    <!--定义执行SQL装载数据-->
+    <load-exec-sql
+        id=""
+        description=""
+    >
+    <!--...省略-->
+    </load-exec-sql>
+
+    <!--定义执行HTTP请求装载数据-->
+    <load-exec-http-req
+        id=""
+        description=""
+    >
+        <!--...省略-->
+    </load-exec-http-req>
+
+    <job
+        id=""
+        description=""
+        name=""
+        enable=""
+    >
+        <logger/>
+
+        <!--定义extract基础属性-->
+        <extract batch-size="" linger-ms=""/>
+
+        <!--定义提取JDBC数据源数据-->
+        <extract-jdbc
+            id=""
+            description=""
+            jdbc-datasource-id=""
+            cron=""
+            disable-cron=""
+            cursor-mode=""
+            fetch-size=""
+        >
+            <sql>sql-content</sql>
+            <retry-stage/>
+            <logger/>
+        </extract-jdbc>
+
+        <!--定义提取MySql binlog数据源数据-->
+        <extract-binlog
+            id=""
+            description=""
+            mq-datasource-id=""
+            table-name=""
+            queue-prefix=""
+            cared-field=""
+        >
+            <filter-binlog/>
+            <logger/>
+        </extract-binlog>
+
+        <extract-redis
+            id=""
+            description=""
+        >
+        </extract-redis>
+
+        <extract-rabbitmq
+            id=""
+            description=""
+        >
+        </extract-rabbitmq>
+
+        <!--定义提取HTTP请求数据-->
+        <extract-http-req
+            id=""
+            description=""
+            path=""
+            method=""
+        >
+        </extract-http-req>
+
+        <!--提取文件系统log文件-->
+        <extract-file-log
+            id=""
+            description=""
+            file-path=""
+            watch=""
+        >
+        </extract-file-log>
+
+        <!--提取文件系统Excel文件-->
+        <extract-file-excel
+            id=""
+            description=""
+            file-path=""
+        >
+        </extract-file-excel>
+
+        <!--提取文件系统csv文件-->
+        <extract-file-csv
+            id=""
+            description=""
+            file-path=""
+        >
+        </extract-file-csv>
+
+        <!--定义数据转换逻辑-->
+        <transforms
+            id=""
+            description=""
+        >
+            <logger/>
+
+            <!--定义transform基础属性-->
+            <transform/>
+
+            <transform-exec-fuc/>
+            <transform-exec-sql/>
+            <transform-exec-redis-cmd/>
+            <transform-send-rabbitmq-msg/>
+            <transform-send-rocketmq-msg/>
+            <transform-send-kafka-msg/>
+            <transform-exec-elasticsearch-req/>
+            <transform-exec-http-req/>
+        </transforms>
+
+        <!--定义数据转换逻辑-->
+        <loads
+            id=""
+            description=""
+        >
+            <logger/>
+
+            <!--定义load基础属性-->
+            <load/>
+
+            <load-exec-fuc/>
+            <load-exec-sql/>
+            <load-exec-redis-cmd/>
+            <load-send-rabbitmq-msg/>
+            <load-send-rocketmq-msg/>
+            <load-send-kafka-msg/>
+            <load-exec-elasticsearch-req/>
+            <load-exec-http-req/>
+        </loads>
+    </job>
+
+<!--    <pipelines>-->
+<!--        <pipeline>-->
+<!--        </pipeline>-->
+<!--    </pipelines>-->
+<!--    <scheme/>-->
+<!--    <tunnel/>-->
+</exchange>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<xsd:schema
+        xmlns="http://www.hinny.top/schema/exchange"
+        xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://www.hinny.top/schema/exchange"
+>
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
+
+</xsd:schema>
