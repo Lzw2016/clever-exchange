@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/clever-exchange.iml" filepath="$PROJECT_DIR$/.idea/clever-exchange.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/exchange-embed/clever-exchange.exchange-embed.main.iml" filepath="$PROJECT_DIR$/.idea/modules/exchange-embed/clever-exchange.exchange-embed.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/exchange-embed/clever-exchange.exchange-embed.test.iml" filepath="$PROJECT_DIR$/.idea/modules/exchange-embed/clever-exchange.exchange-embed.test.iml" />
+    </modules>
+  </component>
+</project>
